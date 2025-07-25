@@ -1,0 +1,29 @@
+\subsection*{Matriz inversa II}
+Recordemos que una matriz inversa es aquella que cumple lo siguiente:
+$$ AB=BA=I \Rightarrow B=A^{-1} $$
+donde $A$ y $B$ son matrices cuadradas, y $B$ viene siendo la matriz inversa de $A$; es decir:
+$$ AA^{-1}=A^{-1}A=I $$
+No toda matriz es invertible. Una matriz cuya determinada es nulo, no tiene su inversa, a esto se denomina matriz singular:
+$$ |A|=0 \Rightarrow \nexists A^{-1} \text{ (matriz singular)} $$
+$$ |A|\ne0 \Rightarrow \exists A^{-1} \text{ (matriz invertible)} $$
+\subsubsection*{Propiedades de la matriz inversa}
+\begin{enumerate}
+	\item $ A\emptyset=\emptyset A=\emptyset $
+	\item $ AB=\emptyset \Rightarrow B=\emptyset $
+	\item $ (A^{-1})^{-1}=A $
+	\item $ (AB)^{-1}=B^{-1}A^{-1} $
+	\item $ (kA)^{-1}=k^{-1}A^{-1} $
+	\item $ I^{-1}=I $
+	\item $ (A^T)^{-1}=(A-1)^T $
+	\item $ (A^n)^{-1}=(A^{-1})^n $
+	\item $ \mathrm{Adj}(A^{-1})=|A^{-1}|(A^{-1})^{-1} $
+	\item $ \mathrm{Adj}(A^{-1})=\frac{1}{|A|}A=\frac{A}{|A|} $
+\end{enumerate}
+\subsubsection*{Método de la adjunta}
+Para toda matriz cuadrada $A$, se cumple que:
+$$ A\cdot\mathrm{Adj}(A)=\mathrm{Adj}(A)\cdot=|A|I $$
+donde $I$ es la matriz identidad, y $|A|\ne 0$, entonces:
+$$ A^{-1}=\frac{1}{|A|}\mathrm{Adj(A)} $$
+\subsubsection*{Método por operaciones elementales (Gauss-Jordan)}
+Este metodo ya lo usamos cuando vimos por primera vez matrices inversas. Esta consiste en transforma dos matrices simultaneamente: $A$ e $I$ donde $A$ es la matriz que queremos invertir e $I$ es la matriz identidad; debemos trasformar $A$ en una matriz identidad, una vez realizado esto $I$ se habra transformado en $A^{-1}$, es decir:
+$$ [A|I]\xrightarrow[\text{operaciones elementales}]{\text{transformar con}}[I|A^{-1}] $$

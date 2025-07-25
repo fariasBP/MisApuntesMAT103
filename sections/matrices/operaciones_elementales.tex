@@ -1,0 +1,606 @@
+\subsection{Operaciones elementales (O.E.)}
+Son cambios que se pueden realizar en las filas y/o columnas de una matriz con el objetivo de encontrar una matriz equivalente
+\begin{enumerate}
+	\item Intercambiar dos filas o columnas
+	\begin{gather*}
+		f_i\leftrightarrow f_j \\
+		c_i\leftrightarrow c_j
+	\end{gather*}
+	\item Multiplicar por un escalar una fila o columna no nulo
+	\begin{gather*}
+		kf_i\rightarrow f_i \\
+		kc_i\rightarrow c_i
+	\end{gather*}
+	\item suma una fila o columna k veces a otra
+	\begin{gather*}
+		kf_i+f_j\rightarrow f_j \\
+		kc_i+c_j\rightarrow c_j
+	\end{gather*} 
+\end{enumerate}
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) O.E. reduc
+		ción a escalonada}}
+	Reducir $A$, a una forma escalonada
+	$$ A=\begin{bmatrix}
+		1 & 2 & -3 & 0 \\
+		2 & 4 & -2 & 2 \\
+		3 & 6 & -4 & 3
+	\end{bmatrix} $$
+\textcolor{gray}{Solución }
+	\begin{align*}
+		&\begin{array} {c}
+			=\begin{bmatrix}
+				1 & 2 & -3 & 0 \\
+				2 & 4 & -2 & 2 \\
+				3 & 6 & -4 & 3
+			\end{bmatrix} \\
+			-2f_1+f_2\rightarrow f_2
+		\end{array}
+		\begin{array} {c}
+			\sim\begin{bmatrix}
+				1 & 2 & -3 & 0 \\
+				0 & 0 & 4 & 2 \\
+				3 & 6 & -4 & 3
+			\end{bmatrix} \\
+			-3f_1+f_3\rightarrow f_3
+		\end{array} \\
+		&\begin{array} {c}
+			\sim\begin{bmatrix}
+				1 & 2 & -3 & 0 \\
+				0 & 0 & 4 & 2 \\
+				0 & 0 & 5 & 3
+			\end{bmatrix} \\
+			4f_3\rightarrow f_3
+		\end{array}
+		\begin{array} {c}
+			\sim\begin{bmatrix}
+				1 & 2 & -3 & 0 \\
+				0 & 0 & 4 & 2 \\
+				0 & 0 & 20 & 12
+			\end{bmatrix} \\
+			-5f_2+f_3\rightarrow f_3
+		\end{array} \\
+		&\begin{array} {c}
+			A\sim\begin{bmatrix}
+				1 & 2 & -3 & 0 \\
+				0 & 0 & 4 & 2 \\
+				0 & 0 & 0 & 2
+			\end{bmatrix}
+		\end{array}
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\subsubsection*{Consecuencia de operaciones elementales}
+Cuando se trata un matriz con operaciones elementales, se obtiene una matriz distinta a la original y esta puede ser matriz elemental o equivalente: \\
+\textbf{\textit{Matriz elemental}}, es aquella que se obtiene al aplicar una sola operación elemental sobre una matriz identidad.
+\begin{align*}
+	&\begin{array} {c}
+		\begin{bmatrix}
+			1&0\\
+			0&1
+		\end{bmatrix}\\
+		2f_1\rightarrow f_1
+	\end{array}\sim\begin{bmatrix}
+		2&0\\
+		0&1
+	\end{bmatrix}=E=\text{matriz elemental}
+\end{align*}
+\textbf{\textit{Matriz equivalente}}, es aquella que se obtiene al aplicar una o mas operaciones elementales a la original.
+\begin{align*}
+	&A=\begin{array} {c}
+		\begin{bmatrix}
+			1&2\\
+			4&0
+		\end{bmatrix}\\
+		f_1\leftrightarrow f_2
+	\end{array}\sim\begin{bmatrix}
+		4&0\\
+		1&2
+	\end{bmatrix}=B\\
+	&\Rightarrow A\sim B (\text{A  y B son equivalentes})
+\end{align*}
+\textbf{\textit{matrices mas comunes}} \\
+Cuando se realiza operaciones elementales a una matriz, casi siempre se el objetivo sera llegar a las siguientes matrices:
+\begin{itemize}
+	\item Matriz triangular superior o forma escalonada
+	$$
+	\begin{bmatrix}
+		2&7&0\\
+		0&5&6\\
+		0&0&1
+	\end{bmatrix} \text{ ó } \begin{bmatrix}
+		1&2&5&3\\
+		0&5&9&1\\
+		0&0&3&1
+	\end{bmatrix}
+	$$
+	\item  Matriz triangular inferior
+	$$
+	\begin{bmatrix}
+		1&0&0\\
+		5&-1&0\\
+		3&2&3
+	\end{bmatrix} \text{ ó } \begin{bmatrix}
+		2&0&0\\
+		5&-4&0\\
+		8&3&1\\
+		9&2&8
+	\end{bmatrix}
+	$$
+	\item Forma escalonada reducida (Matriz identidad)\\
+	una matriz a la cual se quiere llegar siempre es la matriz identidad, debido que es la forma mas comun de hallar la inversa, es decir si se llega a la identidad entonces existe la inversa de la matriz que se transformó
+	$$
+	\begin{bmatrix}
+		1&0&0\\
+		0&1&0\\
+		0&0&1
+	\end{bmatrix}
+	$$
+	sin embargo si esto no es posible y se llega a algo como esto:
+	$$
+	\begin{bmatrix}
+		1&0&0\\
+		0&1&0\\
+		0&0&0
+	\end{bmatrix}
+	$$
+	entonces concluimos que la matriz no tiene inversa
+\end{itemize}
+\subsubsection{Estrategias para reducir y transformación matrices}
+Las operaciones elementales son útiles para transformar a una matriz equivalente deseada. \\
+\textbf{\textit{Transformar a una matriz identidad equivalente}}
+\begin{enumerate}
+	\item \textit{Se busca el pivote}, en la primera columna, esta debe ser 1 sino se debe realizar una operación elemental para obtenerlo.
+	\item \textit{Crear ceros}, a partir del pivote en la columna en la que se trabaja.
+	\item \textit{Cambiar a la siguiente columna}, y buscar el pivote que ahora siempre debe ser el que tiene mas ceros a la izquierda, el pivote debe ser 1 sino realizar una operación elemental para obtenerlo. Realizar el paso 2.
+	\item \textit{Repetir}, el paso 3 hasta que se llegue a la ultima columna (nota: si se trabaja en las primera columnas de la izquierda abra varios pivotes, escoger cualquier o el mas conveniente; a medida que se llegue a la ultima columna el numero de pivotes disminuye has ser uno solo).
+	\item \textit{Ordenar}, para que tenga la forma de una matriz identidad
+\end{enumerate}
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) O.E. reducción a identidad}}
+	Reducir a identidad:
+	$$
+	A=\begin{bmatrix}
+		3 & 2 & 0 \\
+		4 & 1 & 2 \\
+		0 & 4 & 1
+	\end{bmatrix}
+	$$
+\textcolor{gray}{Solución }
+	\begin{flalign*}
+		&=\begin{bmatrix}
+			3 & 2 & 0 \\
+			4 & 1 & 2 \\
+			0 & 4 & 1
+		\end{bmatrix} \begin{matrix}
+			(\text{creando pivote en} \\
+			\text{columna 1}) \\
+			-f_1+f_2\rightarrow f_2
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			3 & 2 & 0 \\
+			\framebox[0.5cm]{1} & -1 & 2 \\
+			0 & 4 & 1
+		\end{bmatrix}\begin{matrix}
+			(\text{creando ceros en}\\
+			\text{columna 1})\\
+			-3f_2+f_1\rightarrow f_1
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			0 & 5 & -6 \\
+			1 & -1 & 2 \\
+			0 & 4 & 1
+		\end{bmatrix}\begin{matrix}
+			(\text{Creando pivote en}\\
+			\text{columna 2})\\
+			-f_3+f_1\rightarrow f_1
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			0 & \framebox[0.5cm]{1} & -7 \\
+			1 & -1 & 2 \\
+			0 & 4 & 1
+		\end{bmatrix}\begin{matrix}
+			(\text{Creando ceros en}\\
+			\text{columna 2})\\
+			f_1+f_2\rightarrow f_2\\
+			-4f_1+f_3->f_3
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			0 & 1 & -7 \\
+			1 & 0 & -5 \\
+			0 & 0 & -10
+		\end{bmatrix}\begin{matrix}
+			(\text{Creando pivote en}\\
+			\text{columna 3})\\
+			-\frac{1}{10}f_3\rightarrow f_3
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			0 & 1 & -7 \\
+			1 & 0 & -5 \\
+			0 & 0 & \framebox[0.5cm]{1}
+		\end{bmatrix}\begin{matrix}
+			(\text{Creando ceros en}\\
+			\text{columna 3})\\
+			7f_3+f_1\rightarrow f_1\\
+			5f_3+f_2\rightarrow f_2
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			0 & 1 & 0 \\
+			1 & 0 & 0 \\
+			0 & 0 & 1
+		\end{bmatrix}\begin{matrix}
+			(\text{ordenando})\\
+			f_1\leftrightarrow f_2
+		\end{matrix} \\
+		&\therefore  A\sim\begin{bmatrix}
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\
+			0 & 0 & 1
+		\end{bmatrix}
+	\end{flalign*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\textbf{\textit{Reducccion a un matriz escalonada equivalente}} \\
+Los pasos son parecidos a la anterior reducción, solo cambia la forma de encontrar el pivote y ya no cambia todas las entradas a ceros 
+\begin{enumerate}
+	\item \textit{Se busca el pivote}, esta siempre debe estar en la primera columna y en la primera fila, y esta puede ser cualquier numero excepto el cero.
+	\item \textit{Crear ceros}, a partir del pivote en la columna en la que se trabaja, estos ceros deben estar estar por debajo del pivote.
+	\item \textit{Cambiar a la siguiente columna}, y buscar el pivote que debe estar en la misma fila o una fila por debajo del anterior pivote.
+	\item \textit{Repetir}, el paso 3 hasta que se llegue a la ultima columna
+\end{enumerate}
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) O.E. reducir a escalonada}}
+	Reducir $A$ a escalonada
+	$$ A=\begin{bmatrix}
+		7&4&1&0 \\
+		3&2&0&1 \\
+		3&3&2&2
+	\end{bmatrix} $$
+\textcolor{gray}{Solución }
+	\begin{flalign*}
+		&=\begin{bmatrix}
+			7&4&1&0 \\
+			3&2&0&1 \\
+			4&3&2&2
+		\end{bmatrix} \begin{matrix}
+			(\text{buscar pivote en} \\
+			\text{columna 1})
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			\framebox[0.5cm]{7}&4&1&0 \\
+			3&2&0&1 \\
+			4&3&2&2
+		\end{bmatrix} \begin{matrix}
+			(\text{Crear ceros por debajo} \\
+			\text{del pivote en columna 1}) \\
+			-\frac{3}{7}f_1+f_2\rightarrow f_2\\
+			-\frac{4}{7}f_1+f_3\rightarrow f_3
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			7&4&1&0 \\
+			0&2/7&-3/7&1 \\
+			0&5/7&10/7&2
+		\end{bmatrix} \begin{matrix}
+			(\text{Buscar el pivote} \\
+			\text{en columna 2})
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			7&4&1&0 \\
+			0&\framebox[0.8cm]{2/7}&-3/7&1 \\
+			0&5/7&10/7&2
+		\end{bmatrix} \begin{matrix}
+			(\text{Crear ceros por} \\
+			(\text{encima del pivote} \\
+			\text{en columna 2}) \\
+			-\frac{5}{2}f_2+f_3\rightarrow f_3
+		\end{matrix} \\
+		&\sim\begin{bmatrix}
+			7&4&1&0 \\
+			0&2/7&-3/7&1 \\
+			0&0&5/2&-1/2
+		\end{bmatrix} \begin{matrix}
+			(\text{Buscar el pivote} \\
+			\text{en columna 3})
+		\end{matrix} \\
+		&\therefore A\sim\begin{bmatrix}
+			7&4&1&0 \\
+			0&2/7&-3/7&1 \\
+			0&0&5/2&-1/2
+		\end{bmatrix}
+	\end{flalign*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\subsubsection{Relación de semejanza de matrices}
+Se sabe que si se realiza operaciones elementales a $A$ se obtiene $B$ y se cumple que $A\sim B$; note que $A$ es diferente a $B$ ($A\ne B$), entonces la pregunta ¿existe una relacion matricial entre ambos?, y la respuesta es si:
+\begin{Theorem*} {}
+	Sea $B$ una matriz obtenido mediante operaciones elementales a $A$:
+	$$A_{m\cross n}\sim B_{m\cross n}$$
+	por lo tanto existe una relación de equivalencia $P$ y $Q$, entre $A$ y $B$ de la forma:
+	$$ P_{m\cross m}\cdot A_{m\cross n}\cdot Q_{n\cross n}=B_{m\cross n} $$
+\end{Theorem*}
+donde $P$ es el producto de matrices elementales en fila y $Q$ es el producto de matrices elementales en columna, es decir: \\
+\begin{gather*}
+	P=E_n\cdot E_{n-1}\cdot E_{n-2}\cdot...\cdot E_2\cdot E_1\\
+	Q=D_1\cdot D_2\cdot D_3\cdot...\cdot D_{n-1}\cdot D_n
+\end{gather*}
+Ademas:
+$$
+	E_0=\left[\begin{smallmatrix}
+		1&0&0&\cdots&0\\
+		0&1&0&\cdots&0\\
+		0&0&1&\cdots&0\\
+		\vdots&\vdots&\vdots&\ddots&\vdots\\
+		0&0&0&\cdots&1
+	\end{smallmatrix}\right] \quad\quad D_0=\left[\begin{smallmatrix}
+		1&0&0&\cdots&0\\
+		0&1&0&\cdots&0\\
+		0&0&1&\cdots&0\\
+		\vdots&\vdots&\vdots&\ddots&\vdots\\
+		0&0&0&\cdots&1
+	\end{smallmatrix}\right]
+$$\\
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) relación de semejanza de matrices}}
+	Hallar la relación Q,Q de las matrices A y B, luego de realizar 3 operaciones elementales en fila y 2 en columna
+	$$ A=\begin{bmatrix}
+		3&4&1&2\\
+		2&0&5&0\\
+		1&3&2&1
+	\end{bmatrix} $$ \\
+\textcolor{gray}{Solución }\\
+Se realiza 3 y 2, operaciones elementales en fila y columna cualesquiera, respectivamente:
+	\begin{align*}
+		&\begin{array} {c}
+			A=\begin{bmatrix}
+				3&4&1&2\\
+				2&0&5&0\\
+				1&3&2&1
+			\end{bmatrix} \\
+			f_1\leftrightarrow f_2
+		\end{array}
+		\begin{array} {c}
+			\sim\begin{bmatrix}
+				2&0&5&0\\
+				3&4&1&2\\
+				1&3&2&1
+			\end{bmatrix} \\
+			3f_3\rightarrow f_3
+		\end{array} \\
+		&\begin{array} {c}
+			=\begin{bmatrix}
+				2&0&5&0\\
+				3&4&1&2\\
+				3&9&6&3
+			\end{bmatrix} \\
+			2f_1+f_2\rightarrow f_2
+		\end{array}
+		\begin{array} {c}
+			\sim\begin{bmatrix}
+				2&0&5&0\\
+				3&4&1&2\\
+				1&3&2&1
+			\end{bmatrix} \\
+			c_2\leftrightarrow c_4
+		\end{array} \\
+		&\begin{array} {c}
+			=\begin{bmatrix}
+				2&0&5&0\\
+				7&2&11&4\\
+				3&3&6&9
+			\end{bmatrix} \\
+			c_1+c_2\rightarrow c_2
+		\end{array}
+		\begin{array} {c}
+			\sim\begin{bmatrix}
+				2&2&5&0\\
+				7&9&11&4\\
+				3&6&6&9
+			\end{bmatrix} \\
+			\
+		\end{array}
+	\end{align*}
+	entonces:
+	\begin{align*}
+		&B=\begin{bmatrix}
+			2&2&5&0\\
+			7&9&11&4\\
+			3&6&6&9
+		\end{bmatrix}\quad A=\begin{bmatrix}
+			3&4&1&2\\
+			2&0&5&0\\
+			1&3&2&1
+		\end{bmatrix}
+	\end{align*}
+	se sabe que:
+	\begin{align*}
+		&A_{3\cross 4}\sim B_{3\cross 4} \Rightarrow \exists \ P, Q \\
+		&\text{tal que: }P_{3\cross3}A_{3\cross4}Q_{4\cross4}=B_{3\cross4}
+	\end{align*}
+	para P se hicieron 3 operaciones elementales:
+	\begin{align*}
+		&\text{en filas:}\\
+		&\text{1)}f_1\leftrightarrow f_2\\
+		&\text{2)}3f_3\rightarrow f_3\\
+		&\text{3)}2f_1+f_2\rightarrow f_2\\
+		&\Rightarrow P_{3\cross3}=E_3\cdot E_2\cdot E_1 \Leftrightarrow E_0=\left[\begin{smallmatrix}
+			1&0&0\\
+			0&1&0\\
+			0&0&1
+		\end{smallmatrix}\right]\\
+		&\begin{bmatrix}
+			1&0&0\\
+			0&1&0\\
+			0&0&1
+		\end{bmatrix} f_1\leftrightarrow f_2 \Rightarrow E_1= \begin{bmatrix}
+			0&1&0\\
+			1&0&0\\
+			0&0&1
+		\end{bmatrix}\\
+		&\begin{bmatrix}
+			1&0&0\\
+			0&1&0\\
+			0&0&1
+		\end{bmatrix} 3f_3\rightarrow f_3 \Rightarrow E_2= \begin{bmatrix}
+			1&0&0\\
+			0&1&0\\
+			0&0&3
+		\end{bmatrix}\\
+		&\begin{bmatrix}
+			1&0&0\\
+			0&1&0\\
+			0&0&1
+		\end{bmatrix} 2f_1+f_2\rightarrow f_2 \Rightarrow E_3= \begin{bmatrix}
+			1&0&0\\
+			2&1&0\\
+			0&0&1
+		\end{bmatrix}
+	\end{align*}
+	para Q se hicieron 2 operaciones elementales en columnas:
+	\begin{align*}
+		&\text{1)}c_2\leftrightarrow c_4\\
+		&\text{2)}c_1+c_2\rightarrow c_2\\
+		&\Rightarrow Q_{4\cross4}=D_1\cdot D_2 \Leftrightarrow D_0=\left[\begin{smallmatrix}
+			1&0&0&0\\
+			0&1&0&0\\
+			0&0&1&0\\
+			0&0&0&1
+		\end{smallmatrix}\right]\\
+		&\begin{bmatrix}
+			1&0&0&0\\
+			0&1&0&0\\
+			0&0&1&0\\
+			0&0&0&1
+		\end{bmatrix} c_2\leftrightarrow c_4 \\ &\Rightarrow D_1= \begin{bmatrix}
+			1&0&0&0\\
+			0&0&0&1\\
+			0&0&1&0\\
+			0&1&0&1
+		\end{bmatrix}\\
+		&\begin{bmatrix}
+			1&0&0&0\\
+			0&1&0&0\\
+			0&0&1&0\\
+			0&0&0&1
+		\end{bmatrix} c_1+c_2\rightarrow c_2 \\ &\Rightarrow D_2= \begin{bmatrix}
+			1&1&0&0\\
+			0&1&0&0\\
+			0&0&1&0\\
+			0&0&0&1
+		\end{bmatrix}
+	\end{align*}
+	finalmente:
+	\begin{align*}
+		&P=E_3\cdot E_2\cdot E_1 \\
+		&P=\begin{bmatrix}
+			1&0&0\\
+			2&1&0\\
+			0&0&1
+		\end{bmatrix}\begin{bmatrix}
+			1&0&0\\
+			0&1&0\\
+			0&0&3
+		\end{bmatrix}\begin{bmatrix}
+			0&1&0\\
+			1&0&0\\
+			0&0&1
+		\end{bmatrix}\\
+		&P= \begin{bmatrix}
+			0&1&0\\
+			1&2&0\\
+			0&0&3
+		\end{bmatrix}\\
+		&Q=D_1\cdot D_2 \\
+		&Q=\begin{bmatrix}
+			1&0&0&0\\
+			0&0&0&1\\
+			0&0&1&0\\
+			0&1&0&1
+		\end{bmatrix}\begin{bmatrix}
+			1&1&0&0\\
+			0&1&0&0\\
+			0&0&1&0\\
+			0&0&0&1
+		\end{bmatrix} \\
+		&Q= \begin{bmatrix}
+			1&1&0&0\\
+			0&0&0&1\\
+			0&0&1&0\\
+			0&1&0&0
+		\end{bmatrix}
+	\end{align*}
+	verificando:
+	\begin{align*}
+		&P\cdot A\cdot Q = B\\
+		&\begin{bmatrix}
+			0&1&0\\
+			1&2&0\\
+			0&0&3
+		\end{bmatrix}\begin{bmatrix}
+			3&4&1&2\\
+			2&0&5&0\\
+			1&3&2&1
+		\end{bmatrix}\begin{bmatrix}
+			1&1&0&0\\
+			0&0&0&1\\
+			0&0&1&0\\
+			0&1&0&0
+		\end{bmatrix}=B\\
+		&\begin{bmatrix}
+			2&2&5&0\\
+			7&9&11&4\\
+			3&6&6&9
+		\end{bmatrix}=B
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\subsubsection{Factorización LU}
+Es el proceso de transformar una matriz $A$ en dos, una triangular inferior $L$ y otra triangular superior $U$.
+$$
+	A=LU
+$$
+Para este fin se dobe optar por los siguientes pasos:
+\begin{enumerate}
+	\item Reducir la matriz $A$ a una forma triangular superior que llamaremos $U$, por medio de operaciones elementales $iii$.\\
+	\item Obtendremos $L$ a partir de las operaciones elementales $iii$, donde los valores serán $k$ con signo cambiado y su diagonal principal sera 1.
+\end{enumerate}
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) factorización LU}}
+	Factorizar $A=\begin{bmatrix}
+		1&2&-3\\
+		-3&-4&13\\
+		2&1&-5
+	\end{bmatrix}$
+\textcolor{gray}{Solución }
+	\begin{align*}
+		&=\begin{bmatrix}
+			1&2&-3\\
+			-3&-4&13\\
+			2&1&-5
+		\end{bmatrix} \begin{matrix}
+			\framebox[0.5cm]{3} \ f_1+f_2\rightarrow f_2\\
+			\framebox[0.8cm]{-2} \ f_1+f_3\rightarrow f_3
+		\end{matrix}\\
+		&\sim\begin{bmatrix}
+			1&2&-3\\
+			0&2&4\\
+			0&-3&1
+		\end{bmatrix} \begin{matrix}
+			\framebox[0.5cm]{$\frac{3}{2}$} \ f_2+f_3\rightarrow f_3
+		\end{matrix}\\
+		&\sim\begin{bmatrix}
+			1&2&-3\\
+			0&2&4\\
+			0&0&7
+		\end{bmatrix}=U\\
+		&\Rightarrow L=\begin{bmatrix}
+			1&0&0\\
+			\framebox[0.8cm]{-3}&1&0\\
+			\framebox[0.8cm]{2}&\framebox[1cm]{-3/2}&1
+		\end{bmatrix}\\
+		&\therefore \ A=\begin{bmatrix}
+			1&0&0\\
+			-3&1&0\\
+			2&-3/2&1
+		\end{bmatrix}\begin{bmatrix}
+			1&2&-3\\
+			0&2&4\\
+			0&0&7
+		\end{bmatrix}
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\

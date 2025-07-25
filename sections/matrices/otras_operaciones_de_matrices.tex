@@ -1,0 +1,60 @@
+\subsection{Otras operaciones de matrices}
+\subsubsection{Matriz transpuesta}
+\begin{Theorem*} {Matriz transpuesta}
+	La transpuesta de una matriz $A$, denotada por $A^T$, es la matriz obtenida escribiendo las filas de $A$ por orden como columnas:
+	$$ A_{m\cross n} = [a_{ij}] \rightarrow A^T_{n\cross m} = [a_{ji}] $$
+\end{Theorem*}
+Es decir las filas de $A$ pasan a ser columnas de $A^T$ y las columnas de $A$ pasa ser filas de $A^T$. \\\\
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) matriz transpuesta}}
+	Hallar la transpuesta de $A=\left[\begin{smallmatrix}
+		3 & -4 \\
+		5 & 6 \\
+		2 & 8 
+	\end{smallmatrix}\right]$\\
+\textcolor{gray}{Solución }
+	\begin{flalign*}
+		A_{3\cross2}=\begin{bmatrix}
+			3 & -4 \\
+			5 & 6 \\
+			2 & 8
+		\end{bmatrix} \\
+		\therefore A^T_{2\cross3}=\begin{bmatrix}
+			3 & 5 & 2 \\
+			-4 & 6 & 8
+		\end{bmatrix}
+	\end{flalign*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\noindent\textbf{\textit{Propiedades de una matriz transpuesta}}
+\begin{enumerate}
+	\item $ (A+B)^T=A^T+B^T $
+	\item $ (A^T)^T=A $
+	\item $ (kA)^T=kA^T $ (k: escalar)
+	\item $ (AB)^T=A^TB^T $
+\end{enumerate}
+\subsubsection{Traza de una matriz}
+La traza es una operacion donde interviene la diagonal principal
+\begin{Theorem*} {Traza de una matriz}
+	Sea $A_{n\cross n=[a_{ij}]}$ entonces su traza denotada por $tr(A)$ se define de la siguiente manera:
+	$$ tr(A)=\sum_{i=1}^{n}aii $$
+\end{Theorem*}
+Es decir, que la traza viene siendo la suma de los elementos de la diagonal principal de una matriz cuadrada. \\\\
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) traza de una matriz}}
+	Hallar la traza de $A$
+	$$A=\begin{bmatrix}
+		2 & 1 & 3 \\
+		4 & 2 & 5 \\
+		0 & 0 & -1
+	\end{bmatrix}$$
+\textcolor{gray}{Solución }
+	\begin{flalign*}
+		&A=\begin{bmatrix}
+			2 & 1 & 3 \\
+			4 & 2 & 5 \\
+			0 & 0 & -1
+		\end{bmatrix} \\
+		&tr(A)=2+2+(-1) \\
+		&\therefore tr(A)=3
+	\end{flalign*}
+\hspace*{\fill}\colorbox{gray!55}{ }

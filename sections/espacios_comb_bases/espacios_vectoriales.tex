@@ -1,0 +1,127 @@
+\subsection*{Espacios vectoriales}
+La definicion de espacio vectorial involucra un cuerpo arbitrario cuyos elementos se denominan \textit{escalares}, se utilizaran los siguiente notacion:
+\begin{flalign*}
+	K&\quad \text{el cuerpo de escalares}\\
+	a, b, c \text{ o } k&\quad \text{los elemento de K}\\
+	V&\quad \text{el espacio vectorial dado}\\
+	\vec{u},\vec{v},\vec{w}&\quad \text{los elementos de }V\\
+	\vec{\phi}&\quad\text{vector nulo (vació)}
+\end{flalign*}
+\begin{Theorem*} {Definición - Espacios vectoriales}
+	Sea $K$ un cuerpo dado y $V$ un conjunto no vacio, con reglas de suma y producto por un escalar que asignan a ada par $u$, $v$ $\in V$ una \textbf{suma} $u + v \in V$  a cada par $u\in V$, $k\in K$ un \textbf{producto} $ku\in V$. $V$ recibe el nombre de \textbf{espacio vectorial} sobre $K$ (y los elementos de $V$ se llaman vectores) si se satisfacen 5 axiomas para la suma y 5 axiomas para el producto por un escalar.
+\end{Theorem*}
+Por lo tanto, un espacio vectorial es un conjunto de vectores-escalares que cumplen la estructura: 
+$$ (V,+,\cdot) $$
+es decir, que satisfacen los siguientes axiomas:\\\\
+\textbf{\textit{5 axiomas para la suma de vectores}}
+\begin{enumerate}
+	\item Clausura para la suma:
+	$$ \vec{u}+\vec{v}\in V $$
+	\item Conmutabilidad para la suma:
+	$$ \vec{u}+\vec{v}=\vec{v}+\vec{u} $$
+	\item Asociatividad para la suma:
+	$$ (\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w}) $$
+	\item Existencia del neutro aditivo:
+	$$ \vec{u}+\vec{\phi}=\vec{u} $$
+	\item Existencia del inverso aditivo:
+	$$ \vec{u}+\vec{u}'=\vec{\phi} \quad\quad \text{es decir: } \vec{u}+(-\vec{u})=\vec{\phi} $$
+\end{enumerate}
+\textbf{\textit{5 axiomas para el producto por un escalar}}
+\begin{enumerate}
+	\setcounter{enumi}{5}
+	\item Clausura para el producto por un escalar:
+	$$ k\vec{u}\in V $$
+	\item Asociatividad del producto por un escalar
+	$$ (ab)\vec{u}=a(b\vec{u}) $$
+	\item $1^{ra}$propiedad distributiva referida a la suma de escalares:
+	$$ (a+b)\vec{u}=a\vec{u}+b\vec{u} $$
+	\item $2^{da}$propiedad distributiva referida a la suma de vectores:
+	$$ k(\vec{u}+\vec{v})=k\vec{u}+k\vec{v} $$
+	\item Existencia del neutro multiplicativo:
+	$$ k\vec{u}=\vec{u}\quad\quad k=1 $$
+\end{enumerate}
+\end{multicols}
+\subsection*{Ejemplos de espacios vectoriales}
+\subsubsection*{Espacio $K$}
+\subsubsection*{Espacio de matrices $M_{m\cross n}$}
+\subsubsection*{Espacio de polinomios $P(t)$}
+Denotamos por P(t) el conjunto de todos los polinomios
+\begin{Example*} {Espacio de funciones - ej 1}
+	Analizar si las funciones de la forma $k_1+k_2\sen(x)$ donde $k_1, k_2, \in \mathbb{R}$, constituyen un espacio vectorial.
+	Sol.
+	\begin{align*}
+		f(x)=k_1+k_2\sen(x)\\
+		g(x)=k_3+k_4\sen(x)\\
+		h(x)=k_5+k_6\sen(x)
+	\end{align*}
+	\begin{align*}
+		\intertext{i) clausura para la suma}
+		&\vec{u}+\vec{v}\in V\\
+		f(x)+g(x)&=[k_1+k_2\sen(x)]+[k_1+k_2\sen(x)]\\
+		&=k_1+k_2\sen(x)+k_3+k_4\sen(x)\\
+		&=(k_1+k_3)+(k_2+k_4)\sen(x)\\
+		&=k_a+k_b\sen(x) \Longrightarrow \text{(cumple)}
+		\intertext{ii) conmutabilidad para la suma}
+		&\vec{u}+\vec{v}=\vec{v}+\vec{u}\\
+		f(x)+g(x)&=[k_1+k_2\sen(x)]+[k_1+k_2\sen(x)]\\
+		&=k_1+k_2\sen(x)+k_3+k_4\sen(x)\\
+		&=(k_3+k_4\sen(x))+(k_1+k_2\sen(x))\\
+		&=g(x)+f(x)\Longrightarrow\text{(cumple)}
+		\intertext{iii) Asociatividad en la suma}
+		&(\vec{u}+\vec{v})+\vec{w}=\vec{u}+(\vec{v}+\vec{w})\\
+		[f(x)+g(x)]+h(x)&=[k_1+k_2\sen(x)+k_3+k_4\sen(x)]+k_5+k_5\sen(x)\\
+		&=k_1+k_2\sen(x)+k_3+k_4\sen(x)+k_5+k_6\sen(x)\\
+		&=k_1+k_2\sen(x)+[k_3+k_4\sen(x)+k_5+k_6\sen(x)]\\
+		&=f(x)+[g(x)+h(x)]\Longrightarrow \text{(cumple)}
+		\intertext{iv) Existencia del neutro aditivo}
+		&\vec{u}+\vec{\phi}=\vec{u}\\
+		f(x)+\phi(x)&=f(x)\\
+		k_1+k_2\sen(x)\phi(x)&=k_1+k_2\sen(x)\\
+		\phi(x)&=(k_1-k_1)+(k_2-k_2)\sen(x)\\
+		\phi(x)&=0+0\sen(x)\Longrightarrow\text{(cumple)}
+		\intertext{v) Existencia del inverso aditivo}
+		&\vec{u}+\vec{u}^-=\vec{\phi}\\
+		f(x)+f(x)^-&=\phi(x)\\
+		k_1+k_2\sen(x)+f(x)^-=&0+0\sen(x)\\
+		f(x)^-&=(0-k_1)+(0-k_2)\sen(x)\\
+		f(x)^-&=(-k_1)+(-k_2)\sen(x)\Longrightarrow\text{(cumple)}
+		\intertext{vi) clausura para el producto por un escalar}
+		&k\vec{u}\in V\\
+		kf(x)&=k(k_1+k_2\sen(x))\\
+		&=kk_1+kk_2\sen(x)\\
+		&=k_c+k_d\sen(x)\Longrightarrow\text{(cumple)}
+		\intertext{vii) Asocitividad para el producto por un escalar}
+		&(ab)\vec{u}=a(b\vec{u})\\
+		(ab)f(x)&=(ab)(x_1+x_2\sen(x)\\
+		&=abx_1+abx_2\sen(x)\\
+		&=a(bx_1+bx_2\sen(x))\\
+		&=a(b(x_1+x_2\sec(x)))\\
+		&=a(bf(x))\Longrightarrow\text{(cumple)}
+		\intertext{viii) 1ra prop. distributiva referida a la suma de escalares}
+		&(a+b)\vec{u}=a\vec{u}+b\vec{u}\\
+		(a+b)f(x)&=(a+b)(x_1+x_2\sen(x))\\
+		&=(a+b)x_1+(a+b)x_2\sen(x)\\
+		&=ax_1+bx_1+ax_2\sen(x)+bx_2\sen(x)\\
+		&=ax_1+ax_2\sen(x)+bx_1+bx_2\sen(x)\\
+		&=a(x_1+x_2\sen(x))+b(x_1+x_2\sen(x))\\
+		&=af(x)+bf(x)\Longrightarrow\text{(cumple)}
+		\intertext{ix) 2da prop distributiva referida a la suma de vectores}
+		&k(\vec{u}+\vec{v})=k\vec{u}+k\vec{v}\\
+		k(f(x)+g(x))&=k[(k_1+k_3)+(k_2+k_4)\sen(x)]\\
+		&=k(k_1+k_3)+k(k_2+k_4)\sen(x)\\
+		&=kk_1+kk_3+kk_2\sen(x)+kk_4\sen(x)\\
+		&=[kk_1+kk_2\sen(x)]+[kk_3+kk_4\sen(x)]\\
+		&=k(k_1+k_2\sen(x))+k(k_3+k_4\sen(x))\\
+		&=kf(x)+kg(x)\Longrightarrow\text{(cumple)}\\
+		\intertext{x) Existencia del neutro multiplicativo}
+		&k\vec{u}=\vec{u}\\
+		&kf(x)=f(x)\\
+		&k(k_1+k_2\sen(x))=k_1+k_2\sen(x)\\
+		&kk_1+kk_2\sen(x)=k_1+k_2\sen(x)\\
+		&kk_1=k\rightarrow k=\frac{k_1}{k_2}=1\\
+		&kk_2\sen(x)=k_2\sen(x)\rightarrow k=1\\
+		&1f(x)=k_1+k_2\sen(x)\Longrightarrow\text{(cumple)}
+	\end{align*}
+\end{Example*}
+\subsubsection*{Espacios de funciones}
+\begin{multicols}{2}

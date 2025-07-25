@@ -1,0 +1,144 @@
+\end{multicols}
+\section{Sistema de ecuaciones lineales}
+\subsubsection*{Ecuaciones lineales}
+Una ecuación lineal en las variables $ x_1, x_2, x_3,\dots , x_n $ tiene la forma:
+$$ a_1x_1+a_2x_2+a_3x_3+\dots+a_nx_n=b_1 $$
+donde: $ a_1,a_2,a_3,\dots,a_n,b_1 \in \mathbb{R} $. \\
+por ejemplo
+\begin{flalign*}
+	&\begin{array} {l}
+		2x+9y-3z=2\longrightarrow \text{(es ecuación lineal)}\\
+		x_1-2x_2=0\longrightarrow \text{(es ecuación lineal)}\\
+		x_1+x_2+\dots+x_n=1\longrightarrow \text{(es ecuación lineal)}\\
+	\end{array} &\begin{array} {l}
+		3xy-2y=9\longrightarrow \text{(no es ecuación lineal)}\\
+		9y^2-\frac{2}{x}=-2\longrightarrow \text{(no es ecuación lineal)}\\
+		x^2y-1=y\longrightarrow \text{(no es ecuación lineal)}\\
+	\end{array}
+\end{flalign*}
+\subsubsection*{Sistema de ecuaciones lineales}
+Es un conjunto finito de ecuaciones lineales
+$$ \left\{\begin{matrix}
+	a_{11}x_1+a_{12}x_2+a_{13}x_3+\dots+ \ a_{1n}x_n=b_1\\
+	a_{21}x_1+a_{22}x_2+a_{23}x_3+\dots+ \ a_{2n}x_n=b_2\\
+	a_{31}x_1+a_{32}x_2+a_{33}x_3+\dots+ \ a_{3n}x_n=b_3\\
+	\vdots\\
+	a_{m1}x_1+a_{m2}x_2+a_{m3}x_3+\dots+a_{mn}x_n=b_m\\
+\end{matrix}\right. $$
+En función a la definición de igualdad de matrices, es decir dos matrices son iguales cuando tienen el mismo tamaño y sus elementos son iguales posición a posición, entonces podemos pasar de un sistema de ecuaciones a una matricial:
+$$
+	\begin{bmatrix}
+		a_{11}x_1+a_{12}x_2+a_{13}x_3+\dots+ \ a_{1n}x_n\\
+		a_{21}x_1+a_{22}x_2+a_{23}x_3+\dots+ \ a_{2n}x_n\\
+		a_{31}x_1+a_{32}x_2+a_{33}x_3+\dots+ \ a_{3n}x_n\\
+		\vdots\\
+		a_{m1}x_1+a_{m2}x_2+a_{m3}x_3+\dots+a_{mn}x_n\\
+	\end{bmatrix}_{m\cross 1}=\begin{bmatrix}
+		b_1\\
+		b_2\\
+		b_3\\
+		\vdots\\
+		b_m
+	\end{bmatrix}_{m\cross 1}
+$$
+Ahora podemos separar los coeficientes de sus variables con el producto de matrices:
+$$
+	\begin{bmatrix}
+		a_{11}&a_{12}&a_{13}&\cdots&a_{1n}\\
+		a_{21}&a_{22}&a_{23}&\cdots&a_{2n}\\
+		a_{31}&a_{32}&a_{33}&\cdots&a_{3n}\\
+		\vdots&\vdots&\vdots&\ddots&\vdots\\
+		a_{m1}&a_{m2}&a_{m3}&\cdots&a_{mn}\\
+	\end{bmatrix}_{m\cross n}\begin{bmatrix}
+		x_1\\
+		x_2\\
+		x_3\\
+		\vdots\\
+		x_n
+	\end{bmatrix}_{n\cross 1}=\begin{bmatrix}
+		a_{11}x_1+a_{12}x_2+a_{13}x_3+\dots+ \ a_{1n}x_n\\
+		a_{21}x_1+a_{22}x_2+a_{23}x_3+\dots+ \ a_{2n}x_n\\
+		a_{31}x_1+a_{32}x_2+a_{33}x_3+\dots+ \ a_{3n}x_n\\
+		\vdots\\
+		a_{m1}x_1+a_{m2}x_2+a_{m3}x_3+\dots+a_{mn}x_n\\
+	\end{bmatrix}_{m\cross 1}
+$$
+Entonces
+$$
+	\begin{bmatrix}
+		a_{11}&a_{12}&a_{13}&\cdots&a_{1n}\\
+		a_{21}&a_{22}&a_{23}&\cdots&a_{2n}\\
+		a_{31}&a_{32}&a_{33}&\cdots&a_{3n}\\
+		\vdots&\vdots&\vdots&\ddots&\vdots\\
+		a_{m1}&a_{m2}&a_{m3}&\cdots&a_{mn}\\
+	\end{bmatrix}_{m\cross n}\begin{bmatrix}
+		x_1\\
+		x_2\\
+		x_3\\
+		\vdots\\
+		x_n
+	\end{bmatrix}_{n\cross 1}=\begin{bmatrix}
+		b_1\\
+		b_2\\
+		b_3\\
+		\vdots\\
+		b_m
+	\end{bmatrix}_{m\cross 1}
+$$
+finalmente obtenemos un sistema matricial de ecuaciones lineales, donde podemos trabajar, transforma y el cual es nuestro objetivo resolver el sistema, usando distintos propiedades matriciales que ya aprendimos:
+$$ A_{m\cross n}X_{n\cross 1} = B_{m\cross 1} $$
+por lo tanto:
+\begin{Theorem*} {Teoría del álgebra lineal para resolución de sistema de ecuaciones lineales}
+	Sea sistema de ecuaciones lineales de la forma:
+	$$ a_1x_1+a_2x_2+a_3x_3+\dots+a_nx_n=b_1 $$
+	se puede expresar a una forma de de ecuación matricial:
+	$$ A_{m\cross n}X_{n\cross 1} = B_{m\cross 1} $$
+	donde $A$ es la matriz de coeficientes que pertenecen a $\mathbb{R}$, $X$ es la matriz de variables y $B$ es la matriz de términos independientes que pertenecen a $\mathbb{R}$.
+\end{Theorem*}
+\subsection*{Tipos de soluciones}
+\subsection*{Métodos de resolución}
+\subsubsection*{Método de la inversa}
+\begin{Theorem*} {Metodo de la inversa}
+	Sea $A$ una \textbf{matriz $n$-cuadrada}, $B$ matriz de terminos independientes y $X$ es la matriz de variables, entonces:
+	\begin{gather*}
+		AX=B\\
+		A^{-1}AX=A^{-1}B
+	\end{gather*}
+	donde:
+	$$ A_{n\cross n}, |A|\ne 0, A=[a_{ij}] \in \mathbb{R}, B=[b_{ij}] \in \mathbb{R} $$
+	por lo tanto:
+	$$ X=A^{-1}B $$
+\end{Theorem*}
+\subsubsection*{Método de Gauss o forma escalonada}
+\begin{Theorem*} {Método de Gauss}
+	Sea $A$,$B$y$X$ la matriz de coeficientes, terminos independientes y de variables respectivamente; $U$ una matriz triangular superior y $B'$ una matriz transformada por operaciones elementales a partir de $B$. Entonces:
+	\begin{gather*}
+		AX=B\\
+		[A|B]\xrightarrow[\text{operaciones elementales}]{\text{Transformar por}}[U|B']\\
+		UX=B'
+	\end{gather*}
+	donde:
+	$$ A=[a_{ij}] \in \mathbb{R}, B=[b_{ij}] \in \mathbb{R} $$
+\end{Theorem*}
+\subsubsection*{Método de Gauss-Jordan o forma escalonada reducida}
+\begin{Theorem*} {Método de Gauss-Jordan}
+	Sea $A$,$B$y$X$ la matriz de coeficientes, terminos independientes y de variables respectivamente; $I$ e $I'$ una matriz identidad y matriz semejante a la identidad; y $B'$ una matriz transformada por operaciones elementales a partir de $B$. Entonces:
+	$$ AX=B $$
+	existen dos casos:
+	\begin{enumerate}
+		\item se llega a la matriz identidad $I$:
+		\begin{gather*}
+			[A|B]\xrightarrow[\text{operaciones elementales}]{\text{Transformar por}}[I|B']\\
+			IX=B'
+		\end{gather*}
+		\item se llega a una matriz $I'$ parecida a la identidad, debido a que $A$ no es invertible:
+		\begin{gather*}
+			[A|B]\xrightarrow[\text{operaciones elementales}]{\text{Transformar por}}[I'|B']\\
+			I'X=B'
+		\end{gather*}
+	\end{enumerate}
+	donde:
+	$$ A=[a_{ij}] \in \mathbb{R}, B=[b_{ij}] \in \mathbb{R} $$
+\end{Theorem*}
+\subsubsection*{Metodo Cramer}
+\begin{multicols}{2}

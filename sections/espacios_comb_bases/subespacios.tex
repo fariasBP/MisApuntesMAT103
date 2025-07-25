@@ -1,0 +1,90 @@
+\subsection*{Subespacio vectorial}
+\begin{Theorem*} {Subespacio vectorial}
+	Sea $W$ un subconjunto de un espacio vectorial $V$ sobre un cuerpo $K$. $W$ se denomina un subespacio de $V$ si es a su vez un espacio vectorial sobre $K$ con respecto a las operaciones de $V$, suma vectorial y producoto por un esacalar. 
+\end{Theorem*}
+Es decir, es un subconjunto del conjunto $V$ (espacio vectorial), el cual cumple 2 axiomas de clausura para la suma y para el producto por un escalar:
+\begin{enumerate}
+	\item Clausura para la suma:
+	$$ \vec{u}+\vec{v}\in V $$
+	\item Clausura para el producto por un escalar:
+	$$ k\vec{u}\in V $$
+\end{enumerate}
+\noindent en otras palabras es como un resumen del espacio vectorial.
+\begin{Example*} {Subespacio vectorial - ejemplo 1}
+	Demostrar que el conjunto $W={(x,y)\in\mathbb{R}^2/y=10x}$ es un subespacio de $\mathbb{R}^2$.
+	Sol.
+	\begin{align*}
+		&\vec{u}_1=(x_1,y_1)\in W\leftrightarrow y_1=10x_1\\
+		&\vec{u}_2=(x_2,y_2)\in W\leftrightarrow y_2=10x_2\\
+		&\text{clausura para la suma}\\
+		&\vec{u}_1+\vec{u}_2=(x_1,y_1)+(x_2+y_2)\\
+		&=(x_1+x_2,y_1+y_2)\\
+		&=(x_1+x_2,10x_1+10x_2)\\
+		&=((x_1+x_2),10(x_1,x_2))\\
+		&=(x_a,10(x_a))\\
+		&=(x_1,y_a)\in W\Longrightarrow\text{(cumple)}\\
+		&\text{clausura para el producto}\\
+		&k\vec{u}=k(x_1,y_1)\\
+		&=(kx_1,ky_1)\\
+		&=(kx_1,k(10x_1))\\
+		&=(kx_1,10kx_1)\in W \Longrightarrow\text{(cumple)}\\
+		&\therefore W \text{ es un subespacio vectorial}
+	\end{align*}
+\end{Example*}
+\begin{Example*} {Subespacio vectorial - ejemplo 2}
+	Dado el conjunto $W={(a,b,c)\in \mathbb{R}/a+b-c+3=k}$. Hallar "$k$" para que $W$ sea subespacio vectorial.
+	Sol.
+	\begin{align*}
+		&\vec{u}_1=(a_1,b_1,c_1)\leftrightarrow a_1+b_1-c_1+3=k\\
+		&\vec{u}_2=(a_2,b_2,c_2)\leftrightarrow a_2+b_2-c_2+3=k\\
+		&\text{clausura para la suma}\\
+		&\vec{u}_1+\vec{u}_2=(a_1,b_1,c_1)+(a_2,b_2,c_2)\\
+		&=(a_1+a_2,b_1+b_2,c_1+c_2)\in W\\
+		&(a_1+a_2)+(b_1+b_2)-(c_1+c_2)+3=k\\
+		&\underbrace{(a_1+b_1-c_1)}_{k-3}+\underbrace{(a_2+b_2-c_2)}_{k-3}+3=k\\
+		&k-3+k-3+3=k\rightarrow k=3\\
+		&\text{clausura para el producto}\\
+		&\alpha\vec{u}_1=\alpha(a_1,b_1,c_1)=(\alpha a_1,\alpha b_1, \alpha c_1)\\
+		&\alpha a_1+\alpha b_1 - \alpha c_1+3=k\\
+		&\alpha\underbrace{(a_1+b_1-c_1)}_{k-3}+3=l\\
+		&\alpha(k-3)+3=k\\
+		&\alpha(k-3)-(k-3)=0\\
+		&(k-3)(\alpha-1)=0\Rightarrow k=3 \text{ y } \alpha=1\\	
+	\end{align*}
+	$\therefore$ Para $k=3$, $W$ es un subespacio vectorial
+\end{Example*}
+\begin{Example*} {Subespacio vecotorial - ejemplo 3}
+	Analizar si el conjunto $S={(x,y)\in \mathbb{R}^2/y\ge 0}$ constituye o no un subespacio vectorial.
+	\begin{gather*}
+		\vec{a}=(x,y)\in\mathbb{R}\leftrightarrow y\ge0\\
+		\vec{b}=(z,w)\in\mathbb{R}\leftrightarrow x\ge0
+	\end{gather*}
+	Sol.
+	\begin{align*}
+		&\text{clausura para la suma}\\
+		&\vec{a}+\vec{b}=(x,y)+(z,w)\\
+		&=(x+z,y+w)\\
+		&=(k_1,k_2)\Rightarrow k_2\ge 0\Longrightarrow\text{(cumple)}\\
+		&\text{clausura para el producto por escalar}\\
+		&k\vec{a}=k(x,y)=(kx,ky)\\
+		&ky=\left\{\begin{array}{llr}
+			i) k (-) &  ky<0 & \text{(no cumple)}\\
+			ii) k (+) & ky\ge 0 & \text{(cumple)}
+		\end{array}\right.\\
+		&\therefore S \text{ no es un subespacio vectorial}
+	\end{align*}
+\end{Example*}
+\begin{Example*} {Subespacio vectorial - ejemplo 4}
+	Sea $V$ un espacio vectorial de matrices $2\cross2$ sobre $\mathbb{R}$ y $W$ consta de todas las matrices tal que $A^2=A$. Determinar si $W$ es un subespacio vectorial de $V$.
+	Sol.
+	\begin{align*}
+		&W={A\in\mathbb{R}^{2\cross2}/A^2=A}\\
+		&A_1\leftrightarrow A_1^2=A_1\\
+		&A_2\leftrightarrow A_2^2=A_2\\
+		&\text{clausura para la suma}\\
+		&A_1+A_2=(A_1+A_2)^2=(A_1+A_2)(A_1+A_2)\\
+		&=A_1^2+2A_1A_2+A_2^2\\
+		&\Rightarrow A_1+A_2\ne (A_1+A_2)^2\Longrightarrow\text{(no cumple)}\\
+		&\therefore W \text{ no es un subespacio vectorial}
+	\end{align*}
+\end{Example*}

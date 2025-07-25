@@ -1,0 +1,121 @@
+\subsection*{Calculo de determinantes I}
+Existen varios métodos para la resolución de determinantes de una matriz:
+\subsubsection*{Método de Sarrus}
+Este método consiste en multiplicar los elementos de una digonal de baja restada con el producto de los elementos de una diagonal de subida, de la siguiente forma:
+\begin{center}
+	\begin{tikzpicture}
+		\matrix (M) [matrix of math nodes , inner sep=1pt, row sep=0.6cm,column sep=8mm]{
+			&&& -\\      
+			a_{11} & a_{12} & a_{13} & - \\
+			a_{21} & a_{22} & a_{23} & -\\ 
+			a_{31} & a_{32} & a_{33} & \ \\
+			a_{11} & a_{12} & a_{13} & + \\
+			a_{21} & a_{22} & a_{23} & +\\
+			&&& +\\  
+		};
+		
+		
+		\draw (M-2-1.north west) -- (M-4-1.south west) ;
+		\draw (M-2-3.north east) -- (M-4-3.south east) ;
+		
+		\draw[blue](M-2-1)--(M-3-2)--(M-4-3)--(M-5-4);
+		\draw[blue](M-3-1)--(M-4-2)--(M-5-3)--(M-6-4);
+		\draw[blue](M-4-1)--(M-5-2)--(M-6-3)--(M-7-4);
+		
+		\draw[red](M-5-1)--(M-4-2)--(M-3-3)--(M-2-4);
+		\draw[red](M-4-1)--(M-3-2)--(M-2-3)--(M-1-4);
+		\draw[red](M-6-1)--(M-5-2)--(M-4-3)--(M-3-4);
+	\end{tikzpicture}
+\end{center}
+o también:
+\begin{center}
+	\begin{tikzpicture}
+		\matrix (M) [matrix of math nodes , inner sep=1pt, row sep=0.6cm,column sep=5mm]{
+			&&& - & - & -\\      
+			a_{11} & a_{12} & a_{13} & a_{11} & a_{12} & \ \\
+			a_{21} & a_{22} & a_{23} & a_{21} & a_{22} & \ \\ 
+			a_{31} & a_{32} & a_{33} & a_{31} & a_{32} & \ \\
+			&&& + & + & +\\  
+		};
+		
+		\draw (M-2-1.north west) -- (M-4-1.south west) ;
+		\draw (M-2-3.north east) -- (M-4-3.south east) ;
+		
+		\draw[blue](M-2-1)--(M-3-2)--(M-4-3)--(M-5-4);
+		\draw[blue](M-2-2)--(M-3-3)--(M-4-4)--(M-5-5);
+		\draw[blue](M-2-3)--(M-3-4)--(M-4-5)--(M-5-6);
+		
+		\draw[red](M-4-1)--(M-3-2)--(M-2-3)--(M-1-4);
+		\draw[red](M-4-2)--(M-3-3)--(M-2-4)--(M-1-5);
+		\draw[red](M-4-3)--(M-3-4)--(M-2-5)--(M-1-6);
+	\end{tikzpicture}
+\end{center}
+Cabe resaltar que \textbf{este método es solo valido hasta una matriz de 3x3}.
+\begin{Example*} {Método Sarrus para determinantes}
+	Hallar el determinante de:
+	$$
+		A=\begin{bmatrix}
+			1&3\\
+			8&5
+		\end{bmatrix}\text{ y } B=\begin{bmatrix}
+			3&5&1\\
+			0&-2&4\\
+			1&-1&7
+		\end{bmatrix}
+	$$
+	Sol:
+	\begin{align*}
+		|A|=&\begin{vmatrix}
+				1&3\\
+				8&5
+			\end{vmatrix}\\
+		=&(1)(5)-(8)(3)\\
+		|A|=-19\\
+		|B|=&\begin{array} {c}
+			\begin{vmatrix}
+				3&5&1\\
+				0&-2&4\\
+				1&-1&7
+			\end{vmatrix}\\
+			\begin{matrix}
+				3&5&1\\
+				0&-2&4
+			\end{matrix}
+		\end{array}\\
+		=&(3)(-2)(7)+(0)(-1)(1)+(1)(5)(4)\\
+		&-(1)(-2)(1)-(3)(-1)(4)-(0)(5)(7)\\
+		|B|=-8
+	\end{align*}
+\end{Example*}
+\subsubsection*{Método de operaciones elementales}
+Este método consiste en transformar un determinante a una forma triangular superior o inferior, por medio de operaciones elementales y la propiedades de operaciones elementales-valores notables.
+Un ventaja a diferencia del método Sarrus es que no importa el tamaño de la matriz.
+\begin{align*}
+	&\begin{array} {c}
+		\begin{vmatrix}
+			1&1&-2\\
+			-1&2&1\\
+			0&1&-1
+		\end{vmatrix}\\
+		f_1+f_2\rightarrow f_2
+	\end{array}\begin{array} {c}
+	=\begin{vmatrix}
+		1&1&-2\\
+		0&3&-1\\
+		0&1&-1
+	\end{vmatrix}\\
+		1/3f_2\rightarrow f_2
+	\end{array}	\begin{array} {c}
+	=3\begin{vmatrix}
+		1&1&-2\\
+		0&1&-1/3\\
+		0&1&-1
+	\end{vmatrix}\\
+		-f_1+f_3\rightarrow f_3
+	\end{array}\\
+	&3\begin{vmatrix}
+		1&1&-2\\
+		0&1&-1/3\\
+		0&0&-2/3
+	\end{vmatrix}=3\left(-\frac{2}{3}\right)=-2
+\end{align*}

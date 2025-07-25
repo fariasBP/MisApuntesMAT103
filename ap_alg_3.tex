@@ -1,0 +1,30 @@
+\documentclass[12pt,letterpaper]{article}
+
+\input{libraries/commons.tex}
+\input{libraries/preconfigs.tex}
+
+\author{Franco}
+
+\title{Algo}
+
+\begin{document}
+	\begin{multicols}{2}
+		\newcounter{exr}
+		\setcounter{exr}{0} 
+		\input{sections/matrices/matrices.tex}
+		\setcounter{exr}{0} 
+		\input{sections/determinantes/determinantes.tex}
+		\setcounter{exr}{0} 
+		\input{sections/sistema_de_ecuaciones_lineales/sistema_de_ecuaciones_lineales.tex}
+		\setcounter{exr}{0} 
+		\input{sections/espacios_comb_bases/espacios_comb_bases.tex}
+	\end{multicols}
+	
+	\addtocounter{exr}{1} 
+	\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) }}
+
+	\textcolor{gray}{Solución }
+
+	\hspace*{\fill}\colorbox{gray!55}{ } \\
+	
+\end{document}

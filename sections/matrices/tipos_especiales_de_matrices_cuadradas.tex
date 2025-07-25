@@ -1,0 +1,307 @@
+\subsection{Operaciones y tipos especiales de matrices cuadradas}
+\subsubsection{Matriz diagonal}
+La matriz diagonal se define de la siguiente manera:
+\begin{Theorem*} {Matriz diagonal}
+	Es aquella matriz donde sus entradas no diales son nulaes, por lo tanto cumple que:
+	$$
+		A_{n\cross n}=\left[ \ \ a_{ij}=\left\{\begin{matrix}
+			a_{ii} & si & i=j \\
+			0 & si & i\ne j
+		\end{matrix}\right. \ \ \right]
+	$$
+\end{Theorem*}
+Es decir son aquellas matrices donde solo tienen valoes en la diagonal principal
+$$
+	A_{n\cross n}=\begin{bmatrix}
+		a_{11} & 0 & 0 & \cdots & 0 \\
+		0 & a_{22} & 0 & \cdots & 0 \\
+		0 & 0 & a_{33} & \cdots & 0 \\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & 0 & \cdots & a_{nn}
+	\end{bmatrix}
+$$
+\subsubsection{Matriz Triangular}
+\begin{Theorem*} {Matriz Triangular}
+	Son aquellas matrices donde sus entradas por encima o por debajo de su diagonal principal son nulas y debido a esta condicion pueden ser superio o inferior respectivamente.
+	\begin{itemize}
+		\item matriz triangula superior
+		$$A_{n\cross n}=\left[ \ \ a_{ij}=\left\{\begin{matrix}
+			a_{ij} & si & i\le j \\
+			0 & si & i>j
+		\end{matrix}\right. \ \ \right]$$
+		\item matriz triangula superior
+		$$A_{n\cross n}=\left[ \ \ a_{ij}=\left\{\begin{matrix}
+			a_{ij} & si & i\ge j \\
+			0 & si & i<j
+		\end{matrix}\right. \ \ \right]$$
+	\end{itemize}
+\end{Theorem*}
+Tambien a este tipo de matrices se las denominan matrices escalonadas por forma escalones
+$$
+	A_{4\cross 4}=\begin{bmatrix}
+		a_{11} & a_{12} & a_{13} & a_{14} \\
+		0 & a_{22} & a_{23} &  a_{24} \\
+		0 & 0 & a_{33} &  a_{34} \\
+		0 & 0 & 0  & a_{44}
+	\end{bmatrix}
+$$
+$$
+B_{4\cross 4}=\begin{bmatrix}
+	b_{11} & 0 & 0 & 0 \\
+	b_{21} & b_{22} & 0 &  0 \\
+	b_{31} & b_{32} & b_{33} &  0 \\
+	b_{41} & b_{42} & b_{43}  & b_{44}
+\end{bmatrix}
+$$
+\subsubsection{Potencia de una matriz}
+\begin{Theorem*} {Potencia de una matriz}
+	Si la matriz $A$ es cuadrada entonces se puede multiplicar por si misma n veces:
+	$$ A^n=A\cdot A\cdot A\cdot \cdots \cdot A $$
+\end{Theorem*}
+Por lo tanto, para poder sacar la potencia de una matriz, debes saber cómo resolver una multiplicación de matrices. De lo contrario, no puedes calcular una potencia matricial. \\\\
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) potencia de una matriz}}
+	Hallar $A^2$, $A^3$ y $A^4$
+	$$ A=\begin{bmatrix}
+		1 & -1 \\
+		1 & 0
+	\end{bmatrix} $$
+\textcolor{gray}{Solución }
+	\begin{align*}
+		&A^2=AA=\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			0 & -1 \\
+			1 & -1
+		\end{bmatrix} \\
+		&A^3=A^2A=\begin{bmatrix}
+			0 & -1 \\
+			1 & -1
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			-1 & 0 \\
+			0 & -1
+		\end{bmatrix} \\
+		&A^4=A^3A=\begin{bmatrix}
+			-1 & 0 \\
+			0 & -1
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			-1 & 1 \\
+			-1 & 0
+		\end{bmatrix}
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+Con esta operacion podemos ver algunas matrices especiales:
+\begin{enumerate}
+	\item \textbf{\textit{Matriz idempotente}}
+	Es aquella matriz cuadrada que multiplicada por ella misma da como resultado la misma matriz:
+	$$ A^2 = A $$
+	\item  \textbf{\textit{Matriz involutiva}}
+	Es aquella matriz cuadrada que multiplicada por ella misma da como resultado la matriz identidad:
+	$$ A^2 = I $$
+	Debido que al multiplicarse da la identidad, también se puede definirse como una matriz invertible:
+	$$ A^{-1} = A $$
+	Así que, evidentemente, una matriz involutiva es un ejemplo de matriz regular o no degenerada.
+	\item \textbf{\textit{Matriz nilpotente}}
+	Es una matriz cuadrada que elevada a algún número entero da como resultado la matriz nula.
+	$$ A^n=0 $$
+	\item \textbf{\textit{Matriz periódica}}
+	Es aquella matriz cuya potencia $(k+1)$ da como resultado la misma matriz:
+	$$ A^{k+1}=A $$ $$ k\in \mathbb{R}, k: \text{periodo de la matriz} $$
+	note que si la matriz es peridica de para $k=1$ (orden 1) entonces es una matriz idempotente.
+\end{enumerate}
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) matriz periódica}}
+	Demostrar que la matriz $A$ es periódica de grado $6$
+	$$ A=\begin{bmatrix}
+		1 & -1 \\
+		1 & 0
+	\end{bmatrix} $$
+\textcolor{gray}{Solución }
+	\begin{align*}
+		&A^2=AA=\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			0 & -1 \\
+			1 & -1
+		\end{bmatrix} \\
+		&A^3=A^2A=\begin{bmatrix}
+			0 & -1 \\
+			1 & -1
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			-1 & 0 \\
+			0 & -1
+		\end{bmatrix} \\
+		&A^4=A^3A=\begin{bmatrix}
+			-1 & 0 \\
+			0 & -1
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			-1 & 1 \\
+			-1 & 0
+		\end{bmatrix} \\
+		&A^5=A^4A=\begin{bmatrix}
+			-1 & 1 \\
+			-1 & 0
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			0 & 1 \\
+			-1 & 1
+		\end{bmatrix} \\
+		&A^6=A^5A=\begin{bmatrix}
+			0 & 1 \\
+			-1 & 1
+		\end{bmatrix}\begin{bmatrix}
+			1 & -1 \\
+			1 & 0
+		\end{bmatrix}=\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix} = I \\
+		&A^7=A^6A=IA=A
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\begin{Example*} {Matriz periodica - ejemplo 2}
+	Sea $A$ una matriz cuadrada, periódica de grado 3 y se sabe que $A^3=I$; hallar $A^{100}$
+	Sol.
+	\begin{flalign*}
+		&A^3=I; \text{periódica de grado 3: }A^4=A;\\
+		&A^{100}=? \\
+		&A^3=I\\
+		&A^4=IA=A \\
+		&A^5=A^4A=AA=A^2 \\
+		&A^6=A^5A=A^2A=A^3=I \\
+		&A^7=A^6A=IA=A \\
+		&A^8=A^7A=AA=A^2 \\
+		&A^9=A^8A=A^2A=A^3=I\\
+		&\quad \vdots \\
+		&\text{note que elevado a un múltiplo de 3 es I} \\
+		&\quad \vdots \\
+		&A^{99}=I\\
+		&A^{100}=A^{99}A=IA=A\\
+		&\therefore \ A^{100}=A
+	\end{flalign*}
+\end{Example*}
+\subsubsection{Matrices simétricas}
+\begin{Theorem*} {Matriz simétrica}
+	Se llama matriz simétrica si esta es igual a su traspuesta
+	$$ A=A^T $$
+\end{Theorem*}
+La matriz simétrica también se la nombra como matriz simétricamente. Así también, se llama anti simétrica si esta es igual a su transpuesta pero con signo cambiado.
+$$ A=-A^T $$
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) matriz simétrica}}
+	Demostrar que $A$ es una matriz simétrica
+	$$ A=\begin{bmatrix}
+		3 & 2 & 1 \\
+		2 & 5 & -4 \\
+		1 & -4 & -6
+	\end{bmatrix} $$
+\textcolor{gray}{Solución }
+	\begin{align*}
+		&A=\begin{bmatrix}
+			3 & 2 & 1 \\
+			2 & 5 & -4 \\
+			1 & -4 & -6
+		\end{bmatrix}=A^T=\begin{bmatrix}
+		3 & 2 & 1 \\
+		2 & 5 & -4 \\
+		1 & -4 & -6
+		\end{bmatrix}
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) matriz antisimétrica}}
+	Demostrar que $A$ es una matriz anti simétrica
+	$$ A=\begin{bmatrix}
+		0 & 5 & -4 \\
+		-5 & 0 & 6 \\
+		4 & -6 & 0
+	\end{bmatrix} $$
+\textcolor{gray}{Solución }
+	\begin{align*}
+		&A=\begin{bmatrix}
+			0 & 5 & -4 \\
+			-5 & 0 & 6 \\
+			4 & -6 & 0
+		\end{bmatrix}=A^T=\begin{bmatrix}
+			0 & -5 & 4 \\
+			5 & 0 & -6 \\
+			-4 & 6 & 0
+		\end{bmatrix}
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+Propiedades:
+\begin{enumerate}
+	\item en toda matriz antisimetrica se cumple:
+	$$ A_{ii} = 0 $$
+\end{enumerate}
+\subsubsection{Matrices ortogonales}
+\begin{Theorem*} {Matrices ortogonales}
+	Sea una A una matriz cuadrada entonces decimos que es ortogonal si:
+	$$
+	\left.\begin{array} {cc}
+		AA^T=I \\
+		A^TA=I
+	\end{array}\right\}\Longrightarrow A^T=A^{-1}
+	$$
+\end{Theorem*}
+Así también, una matriz ortogonal es una matriz cuadrada con números reales que multiplicada por su traspuesta (o transpuesta) es igual a la matriz Identidad. Es decir, se cumple la siguiente condición:
+$$ AA^T=A^TA=I $$ \\
+\addtocounter{exr}{1} 
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) matrices ortogonales}}
+	Demostrar que $A$ es una matriz ortogonal
+	$$ A=\begin{bmatrix}
+		1/9 & 8/9 & -4/9 \\
+		4/9 & -4/9 & -7/9 \\
+		8/9 & 1/9 & 4/9
+	\end{bmatrix} $$
+\textcolor{gray}{Solución }
+	\begin{align*}
+		&AA^T=I \\
+		&\begin{bmatrix}
+			1/9 & 8/9 & -4/9 \\
+			4/9 & -4/9 & -7/9 \\
+			8/9 & 1/9 & 4/9
+		\end{bmatrix}\begin{bmatrix}
+			1/9 & 4/9 & 8/9 \\
+			8/9 & -4/9 & 1/9 \\
+			-4/9 & -7/9 & 4/9
+		\end{bmatrix} \\
+		&=1/81\left[\begin{smallmatrix}
+			(1+64+16) & (4-32+28) & (8+8-16) \\
+			(4-32+28) & (16+16+49) & (32-4-28) \\
+			(8+8-16) & (32-4-28) & (64+1+16)
+		\end{smallmatrix}\right] \\
+		&1/81\begin{bmatrix}
+			81 & 0 & 0 \\
+			0 & 81 & 0 \\
+			0 & 0 & 81
+		\end{bmatrix} = \begin{bmatrix}
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\
+			0 & 0 & 1
+		\end{bmatrix} = I \\
+		&\therefore \ A \text{ es ortogonal}
+	\end{align*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\

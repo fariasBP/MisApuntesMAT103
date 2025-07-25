@@ -1,0 +1,120 @@
+\subsection{Operaciones con Matrices}
+\subsubsection{Suma (y resta)}
+\begin{flalign*}
+	&A + B \\
+	&= \begin{bmatrix}
+		a_{11} & a_{12} & \cdots & a_{1n} \\
+		a_{21} & a_{22} & \cdots & a_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{m1} & a_{m2} & \cdot & a_{mn}
+	\end{bmatrix} + \begin{bmatrix}
+		b_{11} & b_{12} & \cdots & b_{1n} \\
+		b_{21} & b_{22} & \cdots & b_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		b_{m1} & b_{m2} & \cdot & b_{mn}
+	\end{bmatrix} \\
+	&= \begin{bmatrix}
+		a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1n}+b_{1n} \\
+		a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2n}+b_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdot & a_{mn}+b_{mn}
+	\end{bmatrix}
+\end{flalign*}
+\noindent\textbf{\textit{Propiedades de la suma de matrices (C.A.N.I.)}}
+\begin{enumerate}
+	\item $ A+B=B+A $ (conmutativa)
+	\item $ A+(B+C) = (A+B)+C $ (asociativa)
+	\item $ A+0=A $ (neutro)
+	\item $ A+(-A)=0 $
+\end{enumerate}
+\subsubsection{Multiplicación por escalar}
+\begin{flalign*}
+	kA&=k\begin{bmatrix}
+		a_{11} & a_{12} & \cdots & a_{1n} \\
+		a_{21} & a_{22} & \cdots & a_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{m1} & a_{m2} & \cdot & a_{mn}
+	\end{bmatrix} \\
+	&=\begin{bmatrix}
+		ka_{11} & ka_{12} & \cdots & ka_{1n} \\
+		ka_{21} & ka_{22} & \cdots & ka_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		ka_{m1} & ka_{m2} & \cdot & ka_{mn}
+	\end{bmatrix}
+\end{flalign*}
+\textbf{\textit{Propiedades de multiplicación por escalar}}
+\begin{enumerate}
+	\item $ k(A+B)=kA+kB $ \\
+	$ (k_1+k_2)A=k_1A+k_2A $ (distributiva)
+	\item $ (k_1k_2)A=k_1(k_2A) $ (Asociativo)
+	\item $ 1\cdot A=A \quad 0\cdot A=0 $ (neutro)
+\end{enumerate}
+\end{multicols}
+\subsubsection{Producto de matrices}
+\begin{Theorem*} {Condición para el Producto de matrices}
+	Sean las matriz $A_{m\cross n}$ y $B_{p\cross q}$, entonces existe el producto de ambos $A_{m\cross n} \cdot B_{p\cross q}=C_{m\cross q}$ si y solo si $n=p$
+	$$ \exists  A_{m\cross n} \cdot B_{p\cross q}=C_{m\cross q} \Leftrightarrow n=p $$
+\end{Theorem*}
+Esta condición podemos resaltar lo siguiente:
+\begin{itemize}
+	\item Dos matrices se pueden multiplicar si y solo si, el numero de columnas de la primera matriz es igual al numero de filas de la segunda matriz. $$ A_{m\cross n} \cdot B_{p\cross q}=C_{m\cross q} \Leftrightarrow n=p  $$
+	\item Sí el producto $A_{m\cross n} \cdot B_{p\cross q}$ existe, la matriz resultante $C_{m\cross q}$ sera de dimensiones $m\cross q$, es decir tendra el numero de filas de $A$ y el numero de columnas de $B$.
+	\item La conmutatividad no existe, es decir se puede multiplicar $A_{2\cross 3} \cdot B_{3\cross 5}=C_{2\cross 5}$ pero no se puede multiplicar $B_{3\cross 5} \cdot A_{2\cross 3}$. Esto nos indica que el producto de matrices no es igual al producto que conocemos de toda la vida, lo cual todo.
+\end{itemize}
+\textbf{\textit{Proceso practico para multiplicar matrices}} \\
+La forma practica para multiplicar matrices es el llamado \textbf{Fila por Columna}:
+\begin{flalign*}
+	&AB=\begin{bmatrix}
+		a_{11} & a_{12} & \cdots & a_{1n} \\
+		a_{21} & a_{22} & \cdots & a_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{m1} & a_{m2} & \cdots & a_{mn}
+	\end{bmatrix}\begin{bmatrix}
+		b_{11} & b_{12} & \cdots & b_{1n} \\
+		b_{21} & b_{22} & \cdots & b_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		b_{m1} & b_{m2} & \cdots & b_{mn}
+	\end{bmatrix} \\
+	&=\left[\begin{smallmatrix}
+		(a_{11}b_{11}+a_{12}b_{21}+\cdots+a_{1n}b_{m1}) & (a_{11}b_{12}+a_{12}b_{22}+\cdots+a_{1n}b_{m2}) & \cdots & (a_{11}b_{1n}+a_{12}b_{2n}+\cdots+a_{1n}b_{mn}) \\
+		(a_{21}b_{11}+a_{22}b_{21}+\cdots+a_{2n}b_{m1}) & (a_{21}b_{12}+a_{22}b_{22}+\cdots+a_{2n}b_{m2}) & \cdots & (a_{21}b_{1n}+a_{22}b_{2n}+\cdots+a_{2n}b_{mn}) \\
+		\vdots & \vdots & \ddots & \vdots \\
+		(a_{m1}b_{11}+a_{m2}b_{21}+a_{mn}b_{m1}) & (a_{m1}b_{12}+a_{m2}b_{22}+\cdots+a_{mn}b_{m2}) & \cdots & (a_{m1}b_{1n}+a_{m2}b_{2n}+\cdots+a_{mn}b_{mn})
+	\end{smallmatrix}\right]
+\end{flalign*}\\
+\addtocounter{exr}{1}
+\colorbox{gray!55}{\textcolor{white}{Ej.\arabic{exr}) producto de matrices}}
+	Hallar $AB$ si $A=\bigl[\begin{smallmatrix}3 & 5\\ 2 & 1\end{smallmatrix}\bigr]$ y $B=\bigl[\begin{smallmatrix}4 & 7\\ 8 & 9\end{smallmatrix}\bigr]$ \\
+\textcolor{gray}{Solución }
+	\begin{flalign*}
+		AB&=\begin{bmatrix}
+			3 & 5 \\
+			2 & 1 
+		\end{bmatrix}\begin{bmatrix}
+			4 & 7 \\
+			8 & 9 
+		\end{bmatrix}=\begin{bmatrix}
+			(3\cdot4 + 5\cdot8) & (3\cdot7+5\cdot9) \\
+			(2\cdot4+1\cdot8) & (2\cdot7+1\cdot9)
+		\end{bmatrix}=\begin{bmatrix}
+			52 & 66 \\
+			16 & 23 
+		\end{bmatrix}
+	\end{flalign*}
+\hspace*{\fill}\colorbox{gray!55}{ } \\
+\noindent\textbf{\textit{Propiedades del producto de matrices}}
+\begin{enumerate}
+	\item $AB\ne BA$ (no conmutable)
+	\item $(AB)C=A(BC)$ (asociativa)
+	\item $A_{m\cross n}I_{n\cross n}=A_{m\cross n}$ (neutro)
+	\item La inversa es un caso especial debido a que no existe conmutabilidad:
+	\begin{enumerate}
+		\item $A_{m\cross n}\cdot A_{n\cross m}^-1=I_{m\cross m}$ (por derecha o postmultiplica)
+		\item $A_{n\cross m}^-1\cdot A_{m\cross n}=I_{n\cross n}$ (por izquierda o premultiplica) \\
+		Son diferentes por eso se llama pseudoinversas, unicamente cuando la matriz es cuadrada la inversa es unica:
+		\item $A_{n\cross n}\cdot A_{n\cross n}^-1=A_{n\cross n}^-1\cdot A_{n\cross n}=I_{n\cross n}$
+	\end{enumerate}
+	\item $A(B+C)=AB+AC$ (ley distributiva por la izquierda o premultiplica)
+	\item $(B+C)A=BA+CA$ (ley distributiva por la derecha o postmultiplica)
+\end{enumerate}
+\begin{multicols}{2}

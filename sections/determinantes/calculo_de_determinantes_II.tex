@@ -1,0 +1,134 @@
+\subsection*{Calculo de determinantes II}
+\subsubsection*{Metodo de cofactores}
+Sea una matriz cuadrada $A=[a_{ij}]$ entonces su determinante es la sumatoria al producto parcial de los elementos de una fila o columna cualquiera por sus correspondientes cofactores.
+$$ \det(A)=\sum_{k=1}^{n}a_{ik}C_{ik} \longrightarrow \text{ (para filas) } $$
+$$ \det(A)=\sum_{k=1}^{n}a_{kj}C_{kj} \longrightarrow \text{ (para columnas) } $$
+Es decir, este método consiste en elegir una fila o columna cualquiera, el cual se suma el producto de elemento por el cofacator de cada elemento.
+\begin{Example*} {Método de cofactores - ejemplo 1}
+	Hallar la determinante de:
+	$$ A=\begin{bmatrix}
+		3&5&-1\\
+		2&-3&6\\
+		7&0&4
+	\end{bmatrix} $$
+	Sol.\\
+	Seleccionar una fila o columna
+	\begin{center}
+		\begin{tikzpicture}
+			\matrix (M) [matrix of math nodes , left delimiter={[},right delimiter={]} , inner sep=1pt, row sep=1.1mm,column sep=1.6mm]{    
+				3 & 5 & -1\\
+				2 & -3 & 6\\
+				7 & 0 & 4\\
+			};
+			\draw [red] (M-1-1.south west) -- (M-1-3.south east);
+		\end{tikzpicture}
+	\end{center}
+	hallamos sus cofactores
+	\begin{center}
+		\begin{tikzpicture}
+			\matrix (M) [matrix of math nodes , left delimiter={[},right delimiter={]} , inner sep=0.5pt, row sep=1.1mm,column sep=1.6mm]{    
+				3 & 5 & -1\\
+				2 & -3 & 6\\
+				7 & 0 & 4\\
+			};
+			\draw [red] (M-1-1.north) -- (M-3-1.south);
+			\draw [red] (M-1-1.west) -- (M-1-3.east);
+		\end{tikzpicture}
+		\begin{tikzpicture}
+			\matrix (M) [matrix of math nodes , left delimiter={[},right delimiter={]} , inner sep=0.5pt, row sep=1.1mm,column sep=1.6mm]{    
+				3 & 5 & -1\\
+				2 & -3 & 6\\
+				7 & 0 & 4\\
+			};
+			\draw [red] (M-1-2.north) -- (M-3-2.south);
+			\draw [red] (M-1-1.west) -- (M-1-3.east);
+		\end{tikzpicture}
+		\begin{tikzpicture}
+			\matrix (M) [matrix of math nodes , left delimiter={[},right delimiter={]} , inner sep=0.5pt, row sep=1.1mm,column sep=1.6mm]{    
+				3 & 5 & -1\\
+				2 & -3 & 6\\
+				7 & 0 & 4\\
+			};
+			\draw [red] (M-1-3.north) -- (M-3-3.south);
+			\draw [red] (M-1-1.west) -- (M-1-3.east);
+		\end{tikzpicture}
+	\end{center}
+	\begin{align*}
+		&A_{11}=-12 \quad\quad A_{12}=-34 \quad\quad A_{13}=21
+		\intertext{hallamos su determinante}
+		&|A|=\begin{vmatrix}
+			3&5&-1\\
+			2&-3&6\\
+			7&0&4
+		\end{vmatrix}\\
+		&=a_{11}(-1)^2A_{11}+a_{12}(-1)^3A_{12}+a_{13}(-1)^4A_{13}\\
+		&=(3)(-12)+(5)(-1)(-34)+(-1)(21)\\
+		&=113\\
+		&\therefore \ |A|=113
+	\end{align*}
+\end{Example*}
+Este metodo es mas util para matrices con fila o columnas que tengas elementos nulos (ceros) ya que al multiplicar por elemento esta se anula:
+\begin{Example*} {Metodo de cofactores - ejemplo 2}
+	Hallar la determinante de:
+	$$ A=\begin{bmatrix}
+		0&0&-2&3&1&2\\
+		1&-1&2&-1&0&-3\\
+		3&0&1&-1&-2&4\\
+		5&0&-4&3&1&1\\
+		-2&0&2&9&-9&1\\
+		8&0&-3&1&-1&0
+	\end{bmatrix} $$
+	Sol.
+	\begin{align*}
+		|A|=(-1)\begin{vmatrix}
+			0&-2&3&1&2\\
+			3&1&-1&-2&4\\
+			5&-4&3&1&1\\
+			-2&2&9&-9&1\\
+			8&-3&1&-1&0
+		\end{vmatrix}
+	\end{align*}
+\end{Example*}
+\subsubsection*{Método de Chio (Método combinado)}
+Este método consiste en transformar por medio de operaciones elementales una determinante con el objetivo de generar ceros en fila o columna, una ves esto por el método de cofactores encontrar la determinante.
+\begin{Example*} {Metodo de Chio}
+	Hallar el determinante de:
+	$$ A=\begin{bmatrix}
+		1&234/134&\sqrt{249}\\
+		-1&2&1\\
+		0&1&-1
+	\end{bmatrix} $$
+	Sol.
+	\begin{align*}
+		&\begin{matrix}
+			|A|=\begin{vmatrix}
+				1&\frac{234}{134}&\sqrt{349}\\
+				-1&2&1\\
+				0&1&-1
+			\end{vmatrix}\\
+			f_1+f_2\rightarrow f_2
+		\end{matrix} \begin{matrix}
+			=\begin{vmatrix}
+				1&\frac{234}{134}&\sqrt{349}\\
+				0&3&-1\\
+				0&1&-1
+			\end{vmatrix}\\
+			\
+		\end{matrix}\\
+		&|A|=(1)\begin{vmatrix}
+			3&-1\\
+			1&-1
+		\end{vmatrix}-\cancel{(0)\begin{vmatrix}
+			\frac{234}{134}&\sqrt{349}\\
+			1&-1
+		\end{vmatrix}}\\
+		&\quad\quad+\cancel{(0)\begin{vmatrix}
+			\frac{234}{134}&\sqrt{349}\\
+			3&-1
+		\end{vmatrix}}\\
+		&|A|=\begin{vmatrix}
+			3&-1\\
+			1&-1
+		\end{vmatrix}=3(-1)-(1)(-1)=-2
+	\end{align*}
+\end{Example*}

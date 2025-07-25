@@ -1,0 +1,49 @@
+\subsection{Generación de matrices}
+\subsubsection{Matrices cuadradas}
+\begin{flalign*}
+	&A_{m\cross m} = \begin{bmatrix}
+		a_{11} & a_{12} & \cdots & a_{1n} \\
+		a_{21} & a_{22} & \cdots & a_{2n} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{m1} & a_{m2} & \cdots & a_{mn} \\
+	\end{bmatrix}
+\end{flalign*}
+\subsubsection{Matriz delta de Kronecker}
+\begin{flalign*}
+	&\delta_{n\cross n}=\left[ \ \ \delta_{ij}=\left\{\begin{matrix}
+		d & \text{si} & i=j \\
+		0 & \text{si} & i\ne j
+	\end{matrix}\right. \ \ \right] \\
+	&\delta_{n\cross n}=\begin{bmatrix}
+		d_{11} & 0 & 0 & \cdots & 0 \\
+		0 & d_{22} & 0 & \cdots & 0 \\
+		0 & 0 & d_{33} & \cdots & 0 \\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & 0 & \cdots & d_{nn}
+	\end{bmatrix}
+\end{flalign*}
+Un caso especial es la matriz identidad:
+\begin{flalign*}
+	&I_{n\cross n}=\left[ \ \ \delta_{ij}=\left\{\begin{matrix}
+		1 & \text{si} & i=j \\
+		0 & \text{si} & i\ne j
+	\end{matrix}\right. \ \ \right] \\
+	&I_{n\cross n}=\begin{bmatrix}
+		1 & 0 & 0 & \cdots & 0 \\
+		0 & 1 & 0 & \cdots & 0 \\
+		0 & 0 & 1 & \cdots & 0 \\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & 0 & \cdots & 1
+	\end{bmatrix}
+\end{flalign*}
+\subsubsection{Matriz nulo}
+\begin{flalign*}
+	&0_{m\cross n}=\left[ \ \ 0_{ij}=0 \ \ \right] \\
+	&0_{m\cross n}=\begin{bmatrix}
+		0 & 0 & 0 & \cdots & 0 \\
+		0 & 0 & 0 & \cdots & 0 \\
+		0 & 0 & 0 & \cdots & 0 \\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & 0 & \cdots & 0
+	\end{bmatrix}
+\end{flalign*}

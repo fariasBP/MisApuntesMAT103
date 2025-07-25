@@ -1,0 +1,177 @@
+\subsection*{Menores y cofactores}
+\subsubsection*{Menores}
+Sea una matriz $n$-cuadrada $A=[a_{ij})$ y la submatriz $(n-1)$-cuadrada de A denotada por $M_{ij}$, que se obtine al suprimir $a_{ij}$, su $i$-ésima fila y su $j$-ésima columna. Entonces denominamos \textbf{menor} del elemento $a_{ij}$ de $A$ al determinante $|M_{ij}|$.
+\begin{Example*} {Menores}
+	Hallar el menor $|M_{11}|$, $|M_{22}|$ y $|M_{32}|$ de:
+	$$ A=\begin{bmatrix}
+		3&-1&2\\
+		-1&9&3\\
+		3&5&2
+	\end{bmatrix} $$
+	Sol. \\
+	\begin{tikzpicture}
+		\matrix (M) [matrix of math nodes , left delimiter={[},right delimiter={]} , inner sep=1pt, row sep=1.1mm,column sep=1.6mm]{    
+			\ 3 & -1 & \ 2\\
+			-1 & \ 9 & \ 3\\
+			\ 3 & \ 5 & \ 2 \\
+		};
+		\draw [red] (M-1-1.north) -- (M-3-1.south) ;
+		\draw [red] (M-1-1.west) -- (M-1-3.east) ;
+	\end{tikzpicture}
+	\begin{align*}
+		&|M_{11}|=\begin{vmatrix}
+			9&3\\
+			5&2
+		\end{vmatrix}=45-48=-3 \quad\quad\quad\quad
+	\end{align*}
+	\begin{tikzpicture}
+		\matrix (M) [matrix of math nodes , left delimiter={[},right delimiter={]} , inner sep=1pt, row sep=1.1mm,column sep=1.6mm]{    
+			\ 3 & -1 & \ 2\\
+			-1 & \ 9 & \ 3\\
+			\ 3 & \ 5 & \ 2 \\
+		};
+		\draw [red] (M-1-2.north) -- (M-3-2.south) ;
+		\draw [red] (M-2-1.west) -- (M-2-3.east) ;
+	\end{tikzpicture}
+	\begin{align*}
+		&|M_{22}|=\begin{vmatrix}
+			3&2\\
+			3&2
+		\end{vmatrix}=6-6=0 \quad\quad\quad\quad
+	\end{align*}
+	\begin{tikzpicture}
+		\matrix (M) [matrix of math nodes , left delimiter={[},right delimiter={]} , inner sep=1pt, row sep=1.1mm,column sep=1.6mm]{    
+			\ 3 & -1 & \ 2\\
+			-1 & \ 9 & \ 3\\
+			\ 3 & \ 5 & \ 2 \\
+		};
+		\draw [red] (M-1-2.north) -- (M-3-2.south) ;
+		\draw [red] (M-3-1.west) -- (M-3-3.east) ;
+	\end{tikzpicture}
+	\begin{align*}
+		&|M_{32}|=\begin{vmatrix}
+			3&2\\
+			-1&3
+		\end{vmatrix}=9-(-2)=11 \quad\quad\quad\quad
+	\end{align*}
+\end{Example*}
+Así también podemos hallar los menores de cada elemento de una matriz, y lo llamaremos matriz de menores.
+\begin{Example*} {Matriz de menores}
+	Hallar matriz de menores $M$ si:
+	$$ A=\begin{bmatrix}
+		9&0&-1\\
+		3&5&2\\
+		-7&3&1
+	\end{bmatrix} $$
+	Sol.
+	\begin{align*}
+		&A=\begin{bmatrix}
+			9&0&-1\\
+			3&5&2\\
+			-7&3&1
+		\end{bmatrix}\\
+		&M=\begin{bmatrix}
+			M_{11}&M_{12}&M_{13}\\
+			M_{21}&M_{22}&M_{23}\\
+			M_{31}&M_{32}&M_{33}
+		\end{bmatrix}\\
+		&M=\begin{bmatrix}
+			\begin{vmatrix}
+				5&2\\
+				3&1
+			\end{vmatrix}&\begin{vmatrix}
+				3&2\\
+				-7&1
+			\end{vmatrix}&\begin{vmatrix}
+				3&5\\
+				-7&3
+			\end{vmatrix}\\
+			\begin{vmatrix}
+				0&-1\\
+				3&1
+			\end{vmatrix}&\begin{vmatrix}
+				9&-1\\
+				-7&1
+			\end{vmatrix}&\begin{vmatrix}
+				9&0\\
+				-7&3
+			\end{vmatrix}\\
+			\begin{vmatrix}
+				0&-1\\
+				5&2
+			\end{vmatrix}&\begin{vmatrix}
+				9&-1\\
+				3&2
+			\end{vmatrix}&\begin{vmatrix}
+				9&0\\
+				3&5
+			\end{vmatrix}
+		\end{bmatrix}\\
+		&\therefore \ M=\begin{bmatrix}
+			-1&17&44\\
+			3&2&27\\
+			5&21&45
+		\end{bmatrix}
+	\end{align*}
+\end{Example*}
+\subsubsection*{Cofactores}
+Sea una matriz cuadrada $A=[a_{ij}]$ y $|M_{ij}|$ el menor del elemento $a_{ij}$; entonces definimos el cofactor de $a_{ij}$, denotado por $A_{ij}$ como el menor con signo:
+$$ A_{ij}=(-1)^{i+j}|M_{ij} $$
+Es decir si que si le colocamos a un menor el signo de acuerdo a $(-1)^{i+j}$, entonces ahora es un cofactor.
+\begin{Example*} {Cofactor}
+	Hallar el cofactor $A_{11}$, $A_{22}$ y $A_{32}$ si:
+	$$ A=\begin{bmatrix}
+		3&-1&2\\
+		-1&9&3\\
+		3&5&2
+	\end{bmatrix} $$
+	Sol. \\
+	\begin{align*}
+		&\text{si: } |M_{11}|=-3, \ |M_{22}|=0\text{ y }|M_{32}|=11\\
+		&A_{11}=(-1)^{1+1}|M_{11}|\\
+		&A_{11}=(-1)^2(-3)=-3\\
+		&A_{22}=(-1)^{2+2}|M_{22}|\\
+		&A_{22}=(-1)^4(0)=0\\
+		&A_{32}=(-1)^{3+2}|M_{32}|\\
+		&A_{32}=(-1)^5(11)=-11\\
+	\end{align*}
+\end{Example*}
+Así también podemos hallar los cofactores de cada elemento de una matriz, y lo llamaremos matriz de cofactores. Sin embargo, note usted que los signos que acompañan a los menores se disponen en forma de tablero de ajedrez, con signos $+$ en la diagonal principal:
+$$ \begin{bmatrix}
+	+&-&+&-&\cdots\\
+	-&+&-&+&\cdots\\
+	+&-&+&-&\cdots\\
+	-&+&-&+&\cdots\\
+	\vdots&\vdots&\vdots&\vdots&\ddots\\
+\end{bmatrix} $$
+Esto resulta muy útil ya que no habrá la necesidad de hallar el signo del menor de la anterior manera.
+\begin{Example*} {Matriz de cofactores}
+	Hallar matriz de cofactores $C$ si:
+	$$ A=\begin{bmatrix}
+		9&0&-1\\
+		3&5&2\\
+		-7&3&1
+	\end{bmatrix} \text{ y } M=\begin{bmatrix}
+	-1&17&44\\
+	3&2&27\\
+	5&21&45
+	\end{bmatrix} $$
+	donde $M$ es la matriz de menores\\
+	Sol.
+	\begin{align*}
+		&\text{si: } M=\begin{bmatrix}
+			-1&17&44\\
+			3&2&27\\
+			5&21&45
+		\end{bmatrix} \text{ y } \begin{bmatrix}
+			+&-&+\\
+			-&+&-\\
+			+&-&+\\
+		\end{bmatrix}\\
+		&\therefore \ C=\begin{bmatrix}
+			-1&-17&44\\
+			-3&2&-27\\
+			5&-21&45
+		\end{bmatrix}
+	\end{align*}
+\end{Example*}

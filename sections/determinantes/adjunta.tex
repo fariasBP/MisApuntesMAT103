@@ -1,0 +1,74 @@
+\subsection*{Matriz adjunta}
+Sea una matriz $n$-cuadrada $A=[a_{ij}]$, su adjunta denotado por $\mathrm{adj}(A)$ es la traspuesta de la matriz de cofactores $C$ de $A$:
+$$ \mathrm{Adj}(A)=C^T $$
+\begin{Example*} {Matriz adjunta}
+	Hallar la matriz adjunta de:
+	$$ A=\begin{bmatrix}
+		2&3&-4\\
+		0&-4&2\\
+		1&-1&5
+	\end{bmatrix} $$
+	Sol.
+	\begin{flalign*}
+		&A_{11}=+\begin{vmatrix}
+			-4&2\\
+			-1&5
+		\end{vmatrix}=-18\\
+		&A_{12}=-\begin{bmatrix}
+			0&2\\1&5
+		\end{bmatrix}=2\\
+		&A_{13}=+\begin{bmatrix}
+			0&-4\\
+			1&-1
+		\end{bmatrix}=4\\
+		&A_{21}=-\begin{bmatrix}
+			3&-4\\
+			-1&5
+		\end{bmatrix}=-11\\
+		&A_{22}=+\begin{bmatrix}
+			2&-4\\
+			1&5
+		\end{bmatrix}=14\\
+		&A_{23}=-\begin{bmatrix}
+			2&3\\
+			1&-1
+		\end{bmatrix}=5\\
+		&A_{31}=+\begin{bmatrix}
+			3&-4\\
+			-4&2
+		\end{bmatrix}=-10\\
+		&A_{32}=-\begin{bmatrix}
+			2&-4\\
+			0&2
+		\end{bmatrix}=-4\\
+		&A_{33}=+\begin{bmatrix}
+			2&3\\
+			0&-4
+		\end{bmatrix}=-8\\
+		&C=\begin{bmatrix}
+			-18&2&4\\
+			-11&14&5\\
+			-10&-4&-8
+		\end{bmatrix}\\
+		&\Rightarrow C^T=\begin{bmatrix}
+			-18&-11&-10\\
+			2&14&-4\\
+			4&5&-8
+		\end{bmatrix}\\
+		&\therefore \ \mathrm{Adj}(A)=\begin{bmatrix}
+			-18&-11&-10\\
+			2&14&-4\\
+			4&5&-8
+		\end{bmatrix}
+	\end{flalign*}
+\end{Example*}
+\subsubsection*{Propiedades de la matriz adjunta}
+Sean $A$,$B$ e $I$ matrices $n$-cuadradas, donde $I$ es la matriz identidad, ademas $k$ y $n$ son constante, entonces:
+\begin{enumerate}
+	\item $ \mathrm{Adj}(I)=I $
+	\item $ \mathrm{Adj}(A^k)=[\mathrm{Adj}(A)]^k $
+	\item $ \mathrm{Adj}(AB)=\mathrm{Adj}(B)\mathrm{Adj}(A) $
+	\item $ |\mathrm{Adj}(A)|=|A|^{n-1}$
+	\item $ |\mathrm{Adj}(kA)|=k^{n(n-1)}|A|^{n-1} $
+	\item $ \mathrm{Adj}(A^T)=[\mathrm{Adj}(A)]^T $
+\end{enumerate}
